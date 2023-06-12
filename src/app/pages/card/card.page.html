@@ -1,0 +1,27 @@
+<ion-header [translucent]="true">
+
+  <ion-buttons slot="start">
+    <ion-back-button defaultHref="/"></ion-back-button>
+  </ion-buttons>
+
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <h2 style="text-align: center; padding-top: 25px;">Historial de dispositivos</h2>
+
+  <ion-card *ngFor="let d of dispositivos" style="border-radius: 25px; margin: 20px 10px" >
+    <ion-item >
+      <ion-icon slot="start" size="large" [name]="d.img ? d.img: 'hardware-chip'" ></ion-icon>
+      <ion-card-header >
+        <h3>{{ d.description }}</h3>
+        {{ d.address }}
+      </ion-card-header>
+      <ion-button slot="end"  shape="circle">
+        <ion-icon slot="icon-only"  size="large" name="cog-sharp" ></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-card>
+
+
+
+</ion-content>
