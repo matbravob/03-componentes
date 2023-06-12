@@ -35,6 +35,14 @@ ion-action-sheet.my-custom-class {
   /* role: "destructive" button iOS styling override */
   --ion-color-danger: #000000;
 }
+
+
 .rojo, .rojo .sc-ion-action-sheet-md {
   color: red !important;
+}
+.green, .green .sc-ion-alert-md {
+  color: green !important;
+}
+.cyan, .cyan .sc-ion-alert-md {
+  color: cyan !important;
 }
