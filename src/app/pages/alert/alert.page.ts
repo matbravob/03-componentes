@@ -22,7 +22,7 @@ export class AlertPage implements OnInit {
       header: 'Alert',
       subHeader: 'Botones con alertas',
       message: 'Crack, metele que te va bien',
-      buttons: ['OK', 'RE SI', 'MANDALE', 'YESSS!'],
+      buttons: ['RE SI', 'MANDALE', 'YESSS!'],
     });
 
     await alert.present();
