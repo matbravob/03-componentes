@@ -49,7 +49,7 @@ export class AlertPage implements OnInit {
       ],
     });
 
-    await alert.present();
+    await alert.present()
   }
 
   async presenPromptAlert(){
