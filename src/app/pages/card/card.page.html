@@ -7,14 +7,14 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <h2 style="text-align: center; padding-top: 25px;">Historial de dispositivos</h2>
+  <h2 style="text-align: center; padding-top: 10px;">Historial de dispositivos</h2>
 
   <ion-card *ngFor="let d of dispositivos" style="border-radius: 25px; margin: 20px 10px" >
     <ion-item >
       <ion-icon slot="start" size="large" [name]="d.img ? d.img: 'hardware-chip'" ></ion-icon>
       <ion-card-header >
         <h3>{{ d.description }}</h3>
-        {{ d.address }}
+        <p>{{ d.address }}</p>
       </ion-card-header>
       <ion-button slot="end"  shape="circle">
         <ion-icon slot="icon-only"  size="large" name="cog-sharp" ></ion-icon>

@@ -1,0 +1,96 @@
+<app-header titulo="DateTime"></app-header>
+
+<ion-content [fullscreen]="true">
+
+
+    <ion-list>
+
+      <ion-list-header>
+        <ion-label>Datos de Nacimiento</ion-label>
+      </ion-list-header>
+
+      <ion-item>
+        <ion-label>Fecha de nacimiento</ion-label>
+        <ion-datetime-button  slot="end"
+                              datetime="datetime"
+                              color="warning"
+                              ></ion-datetime-button>
+      </ion-item>
+
+    </ion-list>
+    <ion-modal [keepContentsMounted]="true">
+      <ng-template>
+        <ion-datetime id="datetime"
+                      [showDefaultTitle]="true"
+                      [preferWheel]="true"
+                      presentation="month-year"
+                      [showDefaultButtons]="true"
+                      (ionChange)="cambioFecha($event)"
+                      yearValues="[2205]"
+                      [value]="fechaNaci.toISOString()"></ion-datetime>
+      </ng-template>
+    </ion-modal>
+
+    <ion-list>
+
+      <ion-list-header>
+        <ion-label>Restricciones</ion-label>
+      </ion-list-header>
+
+            <ion-item>
+          <ion-label>Min y Max</ion-label>
+          <ion-datetime-button  slot="end"
+                                datetime="date"
+                                color="warning"
+                                ></ion-datetime-button>
+        </ion-item>
+
+    </ion-list>
+    <ion-modal [keepContentsMounted]="true">
+      <ng-template>
+        <ion-datetime id="date"
+                      [showDefaultTitle]="true"
+                      [preferWheel]="true"
+                      presentation="date"
+                      [showDefaultButtons]="true"
+                      (ionChange)="cambioFecha($event)"
+                      [value]="fechaNaci.toISOString()"
+                      min="2023-06-01T00:00:00"
+                      max="2023-06-31T23:59:59"></ion-datetime>
+      </ng-template>
+    </ion-modal>
+
+      <ion-list>
+
+        <ion-list-header>
+          <ion-label>Custom Options</ion-label>
+        </ion-list-header>
+
+        <ion-item>
+          <ion-label>Fecha de nacimiento</ion-label>
+          <ion-datetime-button  slot="end"
+                                datetime="customOptions"
+                                color="warning"
+
+                                ></ion-datetime-button>
+        </ion-item>
+
+      </ion-list>
+      <ion-modal [keepContentsMounted]="true">
+        <ng-template>
+          <ion-datetime #customOptions
+                        id="customOptions"
+                        slot="time-label"
+                        showDefaultTimeLabel=true
+                        size="fixed"
+                        (ionChange)="cambioFecha($event)"
+                        >
+                        <ion-buttons slot="buttons">
+                          <ion-button color="danger" (click)="customOptions.cancel(true)">Olvidatee</ion-button>
+                          <ion-button color="warning" (click)="customOptions.reset()">Denuevo</ion-button>
+                          <ion-button color="primary" (click)="customOptions.confirm()">Listorti</ion-button>
+                        </ion-buttons></ion-datetime>
+        </ng-template>
+      </ion-modal>
+
+</ion-content>
